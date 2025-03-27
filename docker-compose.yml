@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  netzero-letter-app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      - API_BASE_URL=http://128.140.37.194:5000

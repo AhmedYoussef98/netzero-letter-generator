@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+/* Base setup for RTL */
+html, body {
+    direction: rtl !important;
+}
+
+* {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+/* Streamlit containers */
+.main .block-container {
+    max-width: 1200px;
+    padding-top: 1rem;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    text-align: right !important;
+    font-weight: 700 !important;
+    color: #19402D !important;
+}
+
+/* Card styling */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #67C971;
+}
+
+/* Input control overrides - critical for proper RTL display */
+.stSelectbox > div, 
+.stTextInput > div, 
+.stTextArea > div {
+    text-align: right !important;
+    direction: rtl !important;
+}
+
+/* Select boxes specific fixes */
+.stSelectbox [data-baseweb=select] {
+    direction: rtl !important;
+}
+
+.stSelectbox [data-baseweb=select] > div {
+    justify-content: flex-end !important;
+}
+
+.stSelectbox [data-baseweb=select] > div > div {
+    position: relative !important;
+    right: 0 !important;
+    left: auto !important;
+}
+
+.stSelectbox [data-baseweb=select] > div > div > div {
+    text-align: right !important;
+}
+
+/* Radio buttons */
+.stRadio > div {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
+}
+
+.stRadio label {
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+}
+
+/* Form input element styling */
+input, textarea, select {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+/* Letter preview */
+.letter-preview {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    min-height: 500px;
+    position: relative;
+}
+
+/* Status indicators */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-sent {
+    background-color: rgba(103, 201, 113, 0.1);
+    color: #67C971;
+}
+
+.status-draft {
+    background-color: rgba(25, 64, 45, 0.1);
+    color: #19402D;
+}
+
+.status-review {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #FFC107;
+}
+
+/* Table styling */
+.dataframe {
+    width: 100%;
+    border-collapse: collapse;
+    direction: rtl;
+}
+
+.dataframe th, .dataframe td {
+    text-align: right !important;
+    padding: 12px 16px !important;
+}
+
+.dataframe th {
+    background-color: #f8f9fa;
+    color: #19402D;
+    font-weight: 600;
+}
+
+.dataframe tr:hover {
+    background-color: rgba(103, 201, 113, 0.05);
+}
+
+/* Hide Streamlit elements */
+.stDeployButton, #MainMenu, footer {
+    visibility: hidden !important;
+}
